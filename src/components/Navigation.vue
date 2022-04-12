@@ -186,7 +186,7 @@ nav {
 }
 .login-btn {
   position: fixed;
-  right: 100px;
+  right: 50px;
   top: 12px;
   cursor: pointer;
   font-weight: 700;
@@ -212,18 +212,18 @@ nav {
 .mobile-nav-leave-to {
   transform: translateX(-250px);
 }
-.menu-icon-enter-active,
-.menu-icon-leave-active {
-  transition: all 0.5s ease;
-}
-.menu-icon-enter-to {
-  opacity: 3;
-}
-.menu-icon-enter-from {
-  opacity: 0;
-  transform: translateY(-50px);
-}
-.menu-icon-leave-to {
-  transform: translateY(-50px);
-}
+// .menu-icon-enter-active,
+// .menu-icon-leave-active {
+//   transition: all 0.5s ease;
+// }
+// .menu-icon-enter-to {
+//   opacity: 3;
+// }
+// .menu-icon-enter-from {
+//   opacity: 0;
+//   transform: translateY(-50px);
+// }
+// .menu-icon-leave-to {
+//   transform: translateY(-50px);
+// }
 </style>
