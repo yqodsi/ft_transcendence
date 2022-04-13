@@ -12,14 +12,16 @@
           <router-link class="link" to="home">home</router-link>
           <router-link class="link" to="#">Blogs</router-link>
           <router-link class="link" to="about">Create Post</router-link>
-          <router-link class="link" to="#">Login/Register</router-link>
           <a class="login-btn" href="#!" role="button">
-            <MDBBtn
+            <!-- <MDBBtn
               color="warning"
               style="background-color: #f10086; font-weight: 600"
               rounded
-              >Login</MDBBtn
-            >
+              >Login</MDBBtn -->
+            <!-- > -->
+            <a>
+              <img class="img-42" src="../assets/img.png" />
+            </a>
           </a>
         </ul>
       </div>
@@ -48,11 +50,26 @@
       appear-active-class="animated bounceIn"
     >
       <ul class="mobile-nav" v-show="mobileNav">
-        <router-link class="link" to="#">Home</router-link>
-        <router-link class="link" to="#">Blogs</router-link>
-        <router-link class="link" to="#">Create Post</router-link>
+        <a
+          class="m-1 menu-icon"
+          href="#!"
+          role="button"
+          style="color: #f10086"
+          @click="toggleMobileNav"
+          v-show="mobile"
+        >
+          <MDBIcon icon="times" size="lg"></MDBIcon>
+        </a>
+        <router-link class="link" to="home">Home</router-link>
+        <router-link class="link" to="about">Blogs</router-link>
+        <router-link class="link" to="home">Create Post</router-link>
+        <MDBBtn size="lg" color="primary" floating>
+          <MDBIcon icon="sign-in-alt"></MDBIcon>
+        </MDBBtn>
         <a class="login-side-btn" href="#!" role="button">
-          <MDBBtn style="background-color: #f10086" rounded>Login</MDBBtn>
+          <MDBBtn style="background-color: #f10086; color: white" rounded
+            >Login</MDBBtn
+          >
         </a>
       </ul>
     </transition>
@@ -107,7 +124,7 @@ header {
   z-index: 99;
 }
 .link {
-  font-weight: 700;
+  font-weight: 400;
   padding: 0 8px;
   transition: 0.3s color ease;
   &:hover {
@@ -125,7 +142,7 @@ nav {
     // display: flex;
     // justify-self: flex-start;
     // align-items: center;
-    top: 12px;
+    top: 14px;
     left: 25px;
     position: fixed;
     .header {
@@ -137,8 +154,9 @@ nav {
   }
 
   .nav-links {
-    position: relative;
     display: flex;
+    position: sticky;
+    top: 0;
     flex: 1;
     align-items: center;
     justify-content: center;
@@ -147,7 +165,7 @@ nav {
       margin-right: 32px;
       .link {
         margin-right: 32px;
-        font-weight: 700;
+        font-weight: 400;
         font-size: 16px;
         color: white;
       }
@@ -159,28 +177,28 @@ nav {
 }
 
 .menu-icon {
-  position: absolute;
-  top: 20px;
+  position: fixed;
+  top: 14px;
   right: 25px;
   cursor: pointer;
   width: 25px;
   height: 25px;
-  // border: 1px solid #000;
 }
 .mobile-nav {
-  // border: 1px solid #e0e0e0;
   padding: 25px;
-  width: 70%;
-  max-width: 250px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   height: 100%;
-  background-color: #303030;
+  background-color: #93b5c6;
   top: 0;
   left: 0;
   .link {
-    color: #f55353;
+    color: #041c32;
+    font-weight: 600;
     padding: 15px;
   }
 }
@@ -190,40 +208,33 @@ nav {
   top: 12px;
   cursor: pointer;
   font-weight: 700;
-  // border: 1px solid #000;
 }
 .login-side-btn {
-  position: relative;
-  left: 10px;
-  top: 15px;
+  padding: 10px;
   cursor: pointer;
-  // border: 1px solid #000;
+}
+.img-42 {
+  width: 45px;
+  top: 15px;
+  right: 15px;
+  position: fixed;
+  aspect-ratio: 1;
+  border-radius: 20px;
 }
 .mobile-nav-enter-active,
 .mobile-nav-leave-active {
-  transition: all 0.7s ease;
+  transition: all 0.8s ease;
 }
 .mobile-nav-enter-to {
   transform: translateX(0);
 }
 .mobile-nav-enter-from {
-  transform: translateX(-250px);
+  transform: translateX(600px);
+}
+.mobile-nav-enter-from {
+  transform: translateX(-1000px);
 }
 .mobile-nav-leave-to {
-  transform: translateX(-250px);
+  transform: translateX(-1000px);
 }
-// .menu-icon-enter-active,
-// .menu-icon-leave-active {
-//   transition: all 0.5s ease;
-// }
-// .menu-icon-enter-to {
-//   opacity: 3;
-// }
-// .menu-icon-enter-from {
-//   opacity: 0;
-//   transform: translateY(-50px);
-// }
-// .menu-icon-leave-to {
-//   transform: translateY(-50px);
-// }
 </style>
