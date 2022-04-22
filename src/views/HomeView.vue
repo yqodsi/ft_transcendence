@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>This is Home</h1>
+    <img class="home-img" src="../assets/pong.jpeg" alt="" />
   </div>
 </template>
 
@@ -25,7 +25,7 @@ export default defineComponent({
     },
   },
   created() {
-    document.body.style.backgroundColor = "#041C32";
+    document.body.style.backgroundColor = "black";
   },
 });
 </script>
@@ -35,7 +35,12 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   color: white;
   height: 100vh;
+}
+.home-img {
+  width: 2000px;
+  height: auto;
 }
 </style>
